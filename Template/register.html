@@ -1,0 +1,50 @@
+{% extends "logbase.html" %}
+<!DOCTYPE html>
+<html>
+<head>
+		<meta charset="utf-8">
+		<link href="http://gktcs.in/GLMS/public/static/css/logstyle.css" rel='stylesheet' type='text/css' />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+		<!--webfonts-->
+		<link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text.css'/>
+		<!--//webfonts-->
+</head>
+ 
+<body>
+{% block content %}
+	<div class="main">
+		<form>
+    		<h1><lable> Register </lable> </h1>
+  			<div class="inset">
+				<p>
+	    		 <label for="email">FIRST NAME</label>
+   	 			<input type="text" placeholder="" required/>
+				</p>
+				<p>
+	    		 <label for="email">LAST NAME</label>
+   	 			<input type="text" placeholder="" required/>
+				</p>
+	  			<p>
+	    		 <label for="email">EMAIL ADDRESS</label>
+   	 			<input type="text" placeholder="" required/>
+				</p>
+  				<p>
+				    <label for="password">PASSWORD</label>
+				    <input type="password" placeholder="" required/>
+  				</p>
+				<p>
+				    <label for="password">CONFIRM PASSWORD</label>
+				    <input type="password" placeholder="" required/>
+  				</p>
+				  
+ 			 </div>
+ 	 
+			  <p class="p-container">
+			    <input type="submit" value="Register">
+			  </p>
+		</form>
+	</div> 
+{% endblock %}	
+</body>
+</html>

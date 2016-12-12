@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row well">
+<h1 style="text-align:center; color:#0464BB;margin-bottom: 20px;margin-top: 30px;">Popular Courses Starting Soon</h1>
+				<div class="col-md-3 col-sm-6 course_wrap">
+					<div class="course_inner">
+						<div>
+							<a href="{% url 'python' %}"><img class="img-responsive" src="http://gktcs.in/GLMS/public/static/images/Pyt1.png"/></a>
+						</div>
+						<a href="{% url 'python' %}"><h3>Mastering Python</h3></a>
+						<p>New Batches <br/>Starting Soon</p>
+						<h3><b style="padding-bottom:5px;"> Rs.10 </b></h3>
+						<a href="https://www.instamojo.com/surendra_panpaliya/python-92a80/" rel="im-checkout" data-behaviour="link" data-style="light" data-text="Pay Now" data-token="3f07be3561e6ebb61b748523043bb484"></a>
+						<script src="https://d2xwmjc4uy2hr5.cloudfront.net/im-embed/im-embed.min.js"></script>
+					</div>	
+				</div>
+</div>
+
+{% endblock %}

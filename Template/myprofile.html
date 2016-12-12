@@ -1,0 +1,146 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container" style="">
+<div class="row">	
+
+	<div class="col-md-4 col-md-push-8">
+		<div class="well br20">
+			<div class="row">
+			<div class="col-md-12 col-sm-12">
+			<div class="col-md-3 col-sm-3 profile_strength_links pull-left">
+			<a href="/my-profile">
+			<img id="profile_strength_pic" width="60px" height="60px" class="img-circle" alt="image" src="{{MEDIA_URL}}{{ user.userprofile.picture.url }}">
+			</a>
+			</div>
+			<div class="col-md-9 col-sm-9 pull-left">
+			<h4 class="margin-bottom10 display_name">
+			{{ user.first_name }} {{ user.last_name }}
+			<a class="label label-primary editproflink pull-right" style="font-size: 12px; display: none;" href="/my-profile">Edit</a>
+			</h4>
+			<div class="progress progress-mouseover" style="height: 8px; cursor: pointer;">
+			<div class="progress-bar progress-bar-success mypopover progress-fillbar" style="width: 10%;"></div>
+			</div>
+			<span class="regular text-muted" style="font-size:12px;">Profile Strength 10%</span>
+			<br><br>
+			<div class="runs-list">
+			<div class="run very-slow">
+			<a class="regular prof_prog_text" style="color: #428bca;font-size:12px;" href="/my-profile">Adding your preferred contact time increases profile strength by 10% </a>
+			</div>
+			</div>
+			</div>
+			</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-8 col-md-pull-4">
+		<div class="well br20">
+
+				<ul class="nav nav-tabs responsive-tabs profiletabstyle" role="tablist">
+					<li  class="active"><a href="#profile" onclick="active();" aria-controls="profile" role="tab" data-toggle="tab">PROFILE</a></li>
+							</ul>
+
+				<div class="tab-content">
+					<div role="tabpanel" class="tab-pane active" id="profile">
+					<form enctype="multipart/form-data" action="" method="POST">{% csrf_token %}
+						<div class="col-md-12 col-sm-12 feed-element border-bt">
+											
+
+
+							<p class="mod-lvl1-desc" id="explanation"><br>Please update your interest and skills by filling up the following
+								form.
+								This information will help us to communicate better for
+								class feedbacks and personalized support queries and class schedules.</p>
+								<div class="control-group">
+									<p class="margin-bottom10">E-mail ID: <b>{{user.email}}</b></p>
+								</div>
+							<div class="col-md-3 col-sm-3 no-padding">
+								<img src="{{MEDIA_URL}}{{ user.userprofile.picture.url }}" alt="image" class="img-responsive" id="profile_pic" /><br/>                        
+								<label for="id_picture" ><div>Upload Image</div></label> <input id="id_picture" name="picture" type="file" value="Change Image" />
+
+								
+							</div>
+							<div class="col-md-5 col-sm-5">
+
+										<p>
+										<label for="id_des" ><div>About you:</div></label>
+															<textarea class="form-control margin-bottom10" rows="3" id="id_des" name="des" placeholder="What would you like to say about yourself...  Describe in a sentence... " >{{ user.userprofile.des }}</textarea>
+														<p class="" style="color: #222;">Your identity is never disclosed, unless you choose to. Choose a cool name, picture and description!</p>
+										</p>
+										<p>
+										<label for="id_linkedin_id" ><div>LinkedIn:</div></label>
+										<input type="text" class="form-control"
+											   placeholder="http://www.linkedin.com/your-profile"
+											   id="id_linkedin_id" name="linkedin_id"
+											   value="{{ user.userprofile.linkedin_id }}">	
+										</p>	   
+							</div>
+							<div class="col-md-4 col-sm-4">
+								<div class="control-group">
+									<p>
+										<label for="id_mobile" ><div>Mobile Number:</div></label>
+										<span id="mobileError" style="display: none;color:#ff3333;">*enter a valid mobile number</span>
+										<input id="id_mobile" name="mobile" type="number" class="form-control"
+											   placeholder="Your Mobile No."
+											   value="{{ user.userprofile.mobile }}" onblur="validateContact(value)"/>
+									</p>
+									<p>
+										<label for="id_city" ><div>City:</div></label>
+										   <input type="text" id="id_city" name="city" class="form-control clear margin-bottom10" placeholder="City"
+													 value="{{ user.userprofile.city }}" />
+									</p>				 
+								</div>
+								<p>&nbsp;</p>
+							</div>
+
+						</div>
+						<div class="col-md-12 col-sm-12 feed-element last">
+							<div class="">
+								<div class="col-md-12 col-sm-12 no-padding">
+									<div class="form-horizontal register_formpopup webinar_form"
+										  role="form">
+										
+
+
+										<input type="hidden" id="update_profile_button" value="0">
+										<div class="form-group">
+										</div>
+									</div>
+										
+																	
+								</div>
+							</div>
+						</div>
+						<input class="btn btn-primary" type="submit" value="UPDATE">
+					</form>	
+					</div>
+				</div>		 
+		</div>	
+	</div>
+</div>
+</div>
+{% endblock %}
+<!--<div class="container well">
+<h1>GKTCS</h1>
+<form enctype="multipart/form-data" action="" method="POST">{% csrf_token %}
+	    {{ form }}
+	    <input type="submit" value="login">
+</form>
+
+<h1>
+<p> Mobile : {{ user.userprofile.mobile }}</p>
+<p>LinkedId : {{ user.userprofile.linkedin_id }}</p>
+<p>
+</h1>
+
+</div>
+<p> Mobile : {{ user.userprofile.mobile }}</p>
+<p>LinkedId : {{ user.userprofile.linkedin_id }}</p>
+
+
+
+<p>Username: {{user.username}}</p>
+<p>Email: {{user.email}}</p>
+<p>First name: {{user.first_name}}</p>
+<p>Last name: {{user.last_name}}</p>
+<p></p>
+<p>  </p> -->
