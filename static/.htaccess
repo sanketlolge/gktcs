@@ -1,0 +1,7 @@
+########### AMEMBER START #####################
+AuthType Basic
+AuthName "Members Only"
+AuthUserFile /users/home/chatmandesign/domains/beaconathletics.com/web/public/training/data/.htpasswd
+AuthGroupFile /users/home/chatmandesign/domains/beaconathletics.com/web/public/training/data/.htgroup
+Require  group  PRODUCT_1
+########### AMEMBER FINISH ####################
